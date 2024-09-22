@@ -3,9 +3,8 @@ package main
 import "fmt"
 
 var (
-	name string
+	name, location string
 	age int
-	location string
 )
 
 func main() {

@@ -2,22 +2,31 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
-func timeMap(y interface{}) {
-	z, ok := y.(map[string]interface{})
+type Stringer interface {
+	String() string
+}
 
-	if ok {
-		z["updated_at"] = time.Now()
+type fakeString struct {
+	content string
+}
+
+func (s *fakeString) String() string {
+	return s.content
+}
+
+func printString(value interface{}) {
+	switch str := value.(type) {
+	case string:
+		fmt.Println(str)
+	case Stringer:
+		fmt.Println(str.String())
 	}
 }
 
 func main() {
-	foo := map[string]interface{}{
-		"Matt": 42,
-	}
-
-	timeMap(foo)
-	fmt.Println(foo)
+	s := &fakeString{"hello this is fake string"}
+	printString(s)
+	printString("hello World")
 }

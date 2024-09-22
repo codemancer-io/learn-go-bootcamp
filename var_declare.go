@@ -2,13 +2,12 @@ package main
 
 import "fmt"
 
-var name string
-var location string 
-var age int
+var (
+	name     string = "Prince Oberyn"
+	age      int    = 32
+	location string = "Dorne"
+)
 
 func main() {
-	name = "pat"
-	age = 43
-	location = "Bangkok"
 	fmt.Println(name, age, location)
 }

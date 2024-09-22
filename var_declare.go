@@ -3,7 +3,8 @@ package main
 import "fmt"
 
 var (
-	name, location, age = "Prince Oberyn", "Dorne", 32
+	name, location string = "Prince Oberyn", "Dorne"
+	age            int    = 32
 )
 
 func main() {

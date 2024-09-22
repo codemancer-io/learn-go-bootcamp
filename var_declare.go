@@ -2,10 +2,9 @@ package main
 
 import "fmt"
 
-var (
-	name, location string
-	age int
-)
+var name string
+var location string 
+var age int
 
 func main() {
 	name = "pat"

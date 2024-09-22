@@ -2,12 +2,22 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
-func main() {
-	i := 42
-	f := float64(i)
-	u := uint(f)
+func timeMap(y interface{}) {
+	z, ok := y.(map[string]interface{})
 
-	fmt.Println(i, f, u)
+	if ok {
+		z["updated_at"] = time.Now()
+	}
+}
+
+func main() {
+	foo := map[string]interface{}{
+		"Matt": 42,
+	}
+
+	timeMap(foo)
+	fmt.Println(foo)
 }

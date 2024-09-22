@@ -4,9 +4,7 @@ import (
 	"fmt"
 )
 
-func location(city string) (string, string) {
-	var region string
-	var continent string
+func location(name, city string) (region, continent string) {
 
 	switch city {
 	case "Los Angeles", "LA", "Santa Monica":
@@ -20,6 +18,6 @@ func location(city string) (string, string) {
 }
 
 func main() {
-	region, continent := location("Santa Monica")
+	region, continent := location("Matt", "LA")
 	fmt.Printf("Matt lives in %s, %s", region, continent)
 }
